@@ -63,7 +63,7 @@ def findRating(user_id, film_id):
     return (avgMark(movieRate[user_id])+sum/modSum)
 
 readcsvFile('data.csv')
-my_user=31
+my_user=32
 sim_films=find5Sim(movieRate[my_user])
 res={}
 for film_id in range(0,len(movieRate[my_user])):
@@ -85,8 +85,7 @@ json_data=json.dumps(data);
 
 url ='https://cit-home1.herokuapp.com/api/rs_homework_1'
 headers = {'content-type': 'application/json'}
-print(res)
-#r = requests.post(url, data=json_data,headers=headers)
-#print(r.json())
+r = requests.post(url, data=json_data,headers=headers)
+print(r.json())
 
 
